@@ -13,9 +13,10 @@ const cypress: CommandModule<{}, {}> = {
   command: "cypress",
   describe: "Run Cypress Tests",
   handler: async () => {
-    process.env.DB_CONNECTION = "defaultdb_test";
+    process.env.DB_CONNECTION = "saas_test";
     process.env.NODE_ENV = "test";
     process.env.SERVER_PORT = "3037";
+    process.env.JWT_SECRET = "abc_123";
 
     await startDocker();
 
